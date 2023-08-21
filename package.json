@@ -1,0 +1,64 @@
+{
+  "name": "@entva/react-local",
+  "description": "A React internationalization library inspired by node-polyglot",
+  "author": "Max Degterev <max@degterev.me>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "repository": "entva/react-local",
+  "bugs": "https://github.com/entva/react-local/issues",
+  "version": "1.0.0-beta.0",
+  "keywords": [
+    "react",
+    "polyglot",
+    "i18n",
+    "translation",
+    "locale",
+    "language",
+    "localization",
+    "internationalization"
+  ],
+  "files": [
+    "lib/"
+  ],
+  "module": "lib/index.esm.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "reinstall": "rm -rf node_modules package-lock.json && npm install",
+    "lint": "eslint ./",
+    "build": "rollup --config rollup.config.js --bundleConfigAsCjs",
+    "prepublishOnly": "npm run lint && npm run build && echo \"\\033[0;32mReady to publish\\033[0m\"",
+    "test": "TZ='GMT' mocha \"./{,!(node_modules)/**}/*.test.{js,jsx}\"",
+    "start": "ladle serve"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/plugin-transform-runtime": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@babel/register": "^7.22.5",
+    "@entva/browserslist-config": "^1.0.0",
+    "@ladle/react": "^2.16.1",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/lodash.get": "^4.4.7",
+    "chai": "^4.3.7",
+    "eslint": "^8.46.0",
+    "eslint-config-entva-typescript": "^1.0.0",
+    "mocha": "^10.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.27.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.22.6",
+    "lodash.get": "^4.4.2"
+  }
+}
