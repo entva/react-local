@@ -117,7 +117,8 @@ const translate = (
     result = (variants[index] || variants[0]).trim();
   }
 
-  const renderFragment = (shard: string, index: number) => {
+  let hadJSX = false;
+  const renderShard = (shard: string, index: number) => {
     // `shard` is either a variable WITH syntax '%{variableName}' or a part of the string
     // We could use a regex to extract `variableName` but this is 100x faster
     // Syntax is preserved to avoid false positive replacements when part of the string
@@ -126,11 +127,16 @@ const translate = (
     if (!item) return shard;
 
     const isJSX = isValidElement(item);
-    if (isJSX) return <Fragment key={`${shard}:${index}`}>{item}</Fragment>;
-    return item;
+    if (!isJSX) return item;
+
+    hadJSX = true;
+    return <Fragment key={`${shard}:${index}`}>{item}</Fragment>;
   };
 
-  return result.split(REGEX_VARIABLE).map(renderFragment);
+  const content = result.split(REGEX_VARIABLE).map(renderShard);
+  // If there were JSX replacements we must return an array of fragments
+  if (hadJSX) return content;
+  return content.join('');
 };
 
 export default translate;
