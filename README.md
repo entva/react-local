@@ -159,6 +159,18 @@ const MyComponent = () => {
 };
 ```
 
+### useActiveLocale
+
+`useActiveLocale` returns the name of currently active locale
+
+```javascript
+import { useActiveLocale } from '@entva/react-local';
+
+const MyComponent = () => {
+  const active = useActiveLocale(); // returns 'en-US'
+};
+```
+
 ## Pluralization
 
 Pluralization is supported by using `smart_count` variable in your phrases. It is a special variable that is automatically replaced with the correct pluralization form. The format of the pluralization string is as follows:

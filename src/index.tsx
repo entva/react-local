@@ -1,4 +1,4 @@
-export { useLocaleData, useT, useTranslate } from './hooks';
+export { useLocaleData, useActiveLocale, useT, useTranslate } from './hooks';
 export * from './types';
 
 export { default } from './components/international';
