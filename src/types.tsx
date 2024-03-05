@@ -1,9 +1,12 @@
-import type { ReactNode } from 'react';
+import translate from './translate';
+
+type Translate = typeof translate;
+type TranslateParameters = Parameters<Translate>;
 
 export type TFunction = (
-  phrase: string,
-  substitutions?: Record<string, ReactNode> | number,
-) => ReactNode;
+  phrase: TranslateParameters[1],
+  substitutions?: TranslateParameters[2],
+) => ReturnType<Translate>;
 
 export type LocaleValue<T = unknown> = {
   active: string,

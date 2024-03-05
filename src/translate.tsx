@@ -95,8 +95,8 @@ const REGEX_VARIABLE = /(%\{(?:.+?)\})/;
 const translate = (
   activeLocale: string,
   phrase: string,
-  substitutions?: Record<string, ReactNode> | number,
-): ReactNode => {
+  substitutions?: number | Record<string, unknown>,
+): string | undefined | ReactNode[] => {
   if (!activeLocale) throw new Error('Locale argument must always be provided');
   // If there is no key there is nothing to work with. Matching Polyglot behavior.
   if (!phrase) return undefined;
@@ -127,7 +127,7 @@ const translate = (
     if (!item) return shard;
 
     const isJSX = isValidElement(item);
-    if (!isJSX) return item;
+    if (!isJSX) return String(item);
 
     hadJSX = true;
     return <Fragment key={`${shard}:${index}`}>{item}</Fragment>;
