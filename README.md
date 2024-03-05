@@ -35,7 +35,7 @@ You need to use the `<International />` wrapper around your app to provide conte
 import International from '@entva/react-local';
 
 // Required, active locale key
-const active = 'de-DE';  
+const active = 'de-DE';
 // Optional data, anything locale related, for example date formatting options
 const data = {...};
 
@@ -51,7 +51,7 @@ For TypeScript users `<International />` component takes the type of the data li
 import International from '@entva/react-local';
 
 // Required, active locale key
-const active = 'de-DE';  
+const active = 'de-DE';
 // Optional data, anything locale related, for example date formatting options
 const data = {...};
 
@@ -122,10 +122,10 @@ const MyComponent = () => (
 `useLocaleData` returns the locale data you passed to the provider
 
 ```javascript
-import { useLocale } from '@entva/react-local';
+import { useLocaleData } from '@entva/react-local';
 
 const MyComponent = () => {
-  const locale = useLocale(); // data object passed to the Provider wrapper
+  const locale = useLocaleData(); // data object passed to the Provider wrapper
 };
 
 ```
@@ -195,6 +195,3 @@ t('plural', 2); // 2 apples
 ## License
 
 This project is published under MIT license. See [LICENSE](LICENSE) file for more details.
-
-
-

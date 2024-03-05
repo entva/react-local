@@ -23,7 +23,7 @@ export default {
   plugins: [
     del({ targets: 'lib/*' }),
     peerDepsExternal(),
-    typescript(),
+    typescript({ tsconfig: './tsconfig.build.json' }),
     babel({ exclude: /node_modules/, babelHelpers: 'runtime' }),
     resolve({ browser: true, extensions: ['.js', '.jsx', '.json'] }),
     commonjs({ extensions: ['.js', '.jsx', '.json'] }),
