@@ -1,4 +1,4 @@
-import { isValidElement, Fragment, ReactNode } from 'react';
+import { isValidElement, Fragment } from 'react';
 
 // The string that separates the different phrase possibilities.
 const DELIMETER = '||||';
@@ -96,7 +96,7 @@ const translate = (
   activeLocale: string,
   phrase: string,
   substitutions?: number | Record<string, unknown>,
-): string | undefined | ReactNode[] => {
+): string | undefined => {
   if (!activeLocale) throw new Error('Locale argument must always be provided');
   // If there is no key there is nothing to work with. Matching Polyglot behavior.
   if (!phrase) return undefined;
@@ -135,7 +135,9 @@ const translate = (
 
   const content = result.split(REGEX_VARIABLE).map(renderShard);
   // If there were JSX replacements we must return an array of fragments
-  if (hadJSX) return content;
+  // For practical purposes we return strings in 99% of cases, but typescript with complain
+  // Force return type to string to avoid this
+  if (hadJSX) return content as unknown as string;
   return content.join('');
 };
 
