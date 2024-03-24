@@ -6,7 +6,7 @@
   "readmeFilename": "README.md",
   "repository": "entva/react-local",
   "bugs": "https://github.com/entva/react-local/issues",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "keywords": [
     "react",
     "polyglot",
@@ -54,7 +54,7 @@
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "tslib": "^2.6.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.3"
   },
   "peerDependencies": {
     "react": "^18.0.0"
