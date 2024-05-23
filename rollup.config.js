@@ -7,7 +7,6 @@ import del from 'rollup-plugin-delete';
 import { preserveDirective } from 'rollup-preserve-directives';
 
 const plugins = [
-  del({ targets: 'lib/*' }),
   peerDepsExternal(),
   typescript({ tsconfig: './tsconfig.build.json' }),
   babel({ exclude: /node_modules/, babelHelpers: 'runtime' }),
@@ -17,24 +16,7 @@ const plugins = [
 
 export default [
   {
-    plugins: [...plugins, preserveDirective()],
-    input: 'src/index.tsx',
-    output: [
-      {
-        file: 'lib/index.esm.js',
-        format: 'es',
-        sourcemap: true,
-      },
-      {
-        file: 'lib/index.js',
-        format: 'cjs',
-        sourcemap: true,
-        exports: 'named', // Disable warning for default imports
-      },
-    ],
-  },
-  {
-    plugins,
+    plugins: [del({ targets: 'lib/*' }), ...plugins],
     input: 'src/server.tsx',
     output: [
       {
@@ -44,6 +26,23 @@ export default [
       },
       {
         file: 'lib/server.js',
+        format: 'cjs',
+        sourcemap: true,
+        exports: 'named', // Disable warning for default imports
+      },
+    ],
+  },
+  {
+    plugins: [preserveDirective(), ...plugins],
+    input: 'src/index.tsx',
+    output: [
+      {
+        file: 'lib/index.esm.js',
+        format: 'es',
+        sourcemap: true,
+      },
+      {
+        file: 'lib/index.js',
         format: 'cjs',
         sourcemap: true,
         exports: 'named', // Disable warning for default imports
