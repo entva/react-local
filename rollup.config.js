@@ -4,7 +4,6 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import del from 'rollup-plugin-delete';
-import { preserveDirective } from 'rollup-preserve-directives';
 
 export default {
   input: 'src/index.tsx',
@@ -24,7 +23,6 @@ export default {
   plugins: [
     del({ targets: 'lib/*' }),
     peerDepsExternal(),
-    preserveDirective(),
     typescript({ tsconfig: './tsconfig.build.json' }),
     babel({ exclude: /node_modules/, babelHelpers: 'runtime' }),
     resolve({ browser: true, extensions: ['.js', '.jsx', '.json'] }),
