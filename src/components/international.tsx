@@ -1,3 +1,5 @@
+'use client';
+
 import { useMemo, type ReactNode } from 'react';
 import { LocaleProvider } from '../context';
 

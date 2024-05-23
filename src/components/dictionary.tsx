@@ -1,3 +1,5 @@
+'use client';
+
 import { type ReactNode, useMemo } from 'react';
 import { DictionaryProvider } from '../context';
 import type { DictionaryValue } from '../types';

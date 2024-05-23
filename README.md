@@ -1,7 +1,7 @@
 @entva/react-local
 =============
 
-A React internationalization library inspired by [node-polyglot](https://airbnb.io/polyglot.js/). Not compatible with RSC or Next app folder due to need for context.
+A React internationalization library inspired by [node-polyglot](https://airbnb.io/polyglot.js/).
 
 ## Dictionaries
 
@@ -179,6 +179,8 @@ const MyComponent = () => {
 
 ```javascript
 import { getT } from '@entva/react-local';
+// OR for RSC
+import { getT } from '@entva/react-local/server';
 
 const MyComponent = () => {
   const t = getT('de-DE, 'dictionary);
@@ -192,6 +194,8 @@ const MyComponent = () => {
 
 ```typescript
 import { getTranslate } from '@entva/react-local';
+// OR for RSC
+import { getTranslate } from '@entva/react-local/server';
 
 const MyComponent = () => {
   const [lang, t] = getTranslate<typeof dictionary>('de-DE', dictionary);

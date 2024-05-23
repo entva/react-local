@@ -6,7 +6,7 @@
   "readmeFilename": "README.md",
   "repository": "entva/react-local",
   "bugs": "https://github.com/entva/react-local/issues",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "keywords": [
     "react",
     "polyglot",
@@ -22,6 +22,16 @@
   ],
   "module": "lib/index.esm.js",
   "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.esm.js",
+      "require": "./lib/index.js"
+    },
+    "./server": {
+      "import": "./lib/server.esm.js",
+      "require": "./lib/server.js"
+    }
+  },
   "scripts": {
     "reinstall": "rm -rf node_modules package-lock.json && npm install",
     "lint": "eslint ./",
@@ -53,6 +63,7 @@
     "rollup": "^4.18.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-preserve-directives": "^1.1.1",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5"
   },

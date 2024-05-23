@@ -4,28 +4,50 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import del from 'rollup-plugin-delete';
+import { preserveDirective } from 'rollup-preserve-directives';
 
-export default {
-  input: 'src/index.tsx',
-  output: [
-    {
-      file: 'lib/index.esm.js',
-      format: 'es',
-      sourcemap: true,
-    },
-    {
-      file: 'lib/index.js',
-      format: 'cjs',
-      sourcemap: true,
-      exports: 'named', // Disable warning for default imports
-    },
-  ],
-  plugins: [
-    del({ targets: 'lib/*' }),
-    peerDepsExternal(),
-    typescript({ tsconfig: './tsconfig.build.json' }),
-    babel({ exclude: /node_modules/, babelHelpers: 'runtime' }),
-    resolve({ browser: true, extensions: ['.js', '.jsx', '.json'] }),
-    commonjs({ extensions: ['.js', '.jsx', '.json'] }),
-  ],
-};
+const plugins = [
+  del({ targets: 'lib/*' }),
+  peerDepsExternal(),
+  typescript({ tsconfig: './tsconfig.build.json' }),
+  babel({ exclude: /node_modules/, babelHelpers: 'runtime' }),
+  resolve({ browser: true, extensions: ['.js', '.jsx', '.json'] }),
+  commonjs({ extensions: ['.js', '.jsx', '.json'] }),
+];
+
+export default [
+  {
+    plugins: [...plugins, preserveDirective()],
+    input: 'src/index.tsx',
+    output: [
+      {
+        file: 'lib/index.esm.js',
+        format: 'es',
+        sourcemap: true,
+      },
+      {
+        file: 'lib/index.js',
+        format: 'cjs',
+        sourcemap: true,
+        exports: 'named', // Disable warning for default imports
+      },
+    ],
+  },
+  {
+    plugins,
+    input: 'src/server.tsx',
+    output: [
+      {
+        file: 'lib/server.esm.js',
+        format: 'es',
+        sourcemap: true,
+      },
+      {
+        file: 'lib/server.js',
+        format: 'cjs',
+        sourcemap: true,
+        exports: 'named', // Disable warning for default imports
+      },
+    ],
+  },
+];
