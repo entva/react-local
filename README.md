@@ -1,7 +1,7 @@
 @entva/react-local
 =============
 
-A React internationalization library inspired by [node-polyglot](https://airbnb.io/polyglot.js/).
+A React internationalization library inspired by [node-polyglot](https://airbnb.io/polyglot.js/). Compatible with RSC and Next App Folder.
 
 ## Dictionaries
 
@@ -168,6 +168,35 @@ import { useActiveLocale } from '@entva/react-local';
 
 const MyComponent = () => {
   const active = useActiveLocale(); // returns 'en-US'
+};
+```
+
+## Utility functions
+
+### getT
+
+`getT` works exactly the same as `useT` hook but takes active locale as an additional first argument:
+
+```javascript
+import { getT } from '@entva/react-local';
+
+const MyComponent = () => {
+  const t = getT('de-DE, 'dictionary);
+  t('text'); // returns 'Hallo!'
+};
+```
+
+### getTranslate
+
+`getTranslate` works exactly the same as `useTranslate` hook but takes active locale as an additional first argument:
+
+```typescript
+import { getTranslate } from '@entva/react-local';
+
+const MyComponent = () => {
+  const [lang, t] = getTranslate<typeof dictionary>('de-DE', dictionary);
+  t(lang.text); // returns 'Hallo!'
+  t(lang.missing); // TypeScript compiler throws an error
 };
 ```
 

@@ -13,7 +13,7 @@ export const useDictionary = <T extends DictionaryValue>(dictionary?: T) => {
   return (dictionary || contextValue || {}) as T;
 };
 
-export const useLocaleData = <T = unknown>() => useContext(LocaleContext).data as T;
+export const useLocaleData = <T=unknown>() => useContext(LocaleContext).data as T;
 export const useActiveLocale = () => useContext(LocaleContext).active;
 
 export const useT = <T extends DictionaryValue>(dictionary?: T) => {

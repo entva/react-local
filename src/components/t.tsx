@@ -1,3 +1,5 @@
+'use client';
+
 import type { ReactNode } from 'react';
 import { useDictionary, useT } from '../hooks';
 import type { DictionaryValue } from '../types';
