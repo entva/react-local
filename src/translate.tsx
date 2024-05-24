@@ -96,10 +96,9 @@ const translate = (
   activeLocale: string,
   phrase: string,
   substitutions?: number | Record<string, unknown>,
-): string | undefined => {
+): string => {
   if (!activeLocale) throw new Error('Locale argument must always be provided');
-  // If there is no key there is nothing to work with. Matching Polyglot behavior.
-  if (!phrase) return undefined;
+  if (!phrase) throw new Error('Phrase argument must always be provided');
   if (!substitutions) return phrase;
 
   const options = typeof substitutions === 'number' ? { smart_count: substitutions } : substitutions;
@@ -108,7 +107,7 @@ const translate = (
   // Select plural form: based on a phrase text that contains `n`
   // plural forms separated by `delimiter`, a `locale`, and a `substitutions.smart_count`,
   // choose the correct plural form. This is only done if `count` is set.
-  if (phrase && typeof options.smart_count === 'number') {
+  if (typeof options.smart_count === 'number') {
     const localeType = activeLocale.split('-')[0];
     const variants = phrase.split(DELIMETER);
     const getIndex = pluralizeMap[localeType] || pluralizeMap.en;
@@ -135,7 +134,7 @@ const translate = (
 
   const content = result.split(REGEX_VARIABLE).map(renderShard);
   // If there were JSX replacements we must return an array of fragments
-  // For practical purposes we return strings in 99% of cases, but typescript with complain
+  // For practical purposes we return strings in 99% of cases, but typescript will complain
   // Force return type to string to avoid this
   if (hadJSX) return content as unknown as string;
   return content.join('');
