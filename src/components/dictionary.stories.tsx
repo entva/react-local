@@ -24,6 +24,9 @@ export const WithDictionaryProvider = () => (
         <dt>Nested string:</dt>
         <dd><T phrase="nested.text" /></dd>
 
+        <dt>Plural 0:</dt>
+        <dd><T phrase="pluralize" smartCount={0} /></dd>
+
         <dt>Plural 1:</dt>
         <dd><T phrase="pluralize" smartCount={1} /></dd>
 
@@ -38,11 +41,6 @@ export const WithDictionaryProvider = () => (
             variable_1={<strong onClick={() => alert('🍬')}>bubblegum</strong>}
             variable_2={<em onClick={() => alert('🍑')}>ass</em>}
           />
-        </dd>
-
-        <dt>Missing value:</dt>
-        <dd>
-          <T phrase="missing" />
         </dd>
       </dl>
     </div>
@@ -63,6 +61,9 @@ const WithTHook = () => {
         <dt>Nested string:</dt>
         <dd>{t('nested.text')}</dd>
 
+        <dt>Plural 0:</dt>
+        <dd>{t('pluralize', 0)}</dd>
+
         <dt>Plural 1:</dt>
         <dd>{t('pluralize', 1)}</dd>
 
@@ -75,11 +76,6 @@ const WithTHook = () => {
             variable_1: <strong onClick={() => alert('🍬')}>bubblegum</strong>,
             variable_2: <em onClick={() => alert('🍑')}>ass</em>,
           })}
-        </dd>
-
-        <dt>Missing value:</dt>
-        <dd>
-          {t('missing')}
         </dd>
       </dl>
     </div>

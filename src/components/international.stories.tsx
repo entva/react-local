@@ -15,6 +15,9 @@ export const WithTHook = () => {
         <dt>Nested string:</dt>
         <dd>{t('nested.text')}</dd>
 
+        <dt>Plural 0:</dt>
+        <dd>{t('pluralize', 0)}</dd>
+
         <dt>Plural 1:</dt>
         <dd>{t('pluralize', 1)}</dd>
 
@@ -27,11 +30,6 @@ export const WithTHook = () => {
             variable_1: 'bubblegum',
             variable_2: 'ass',
           })}
-        </dd>
-
-        <dt>Missing value:</dt>
-        <dd>
-          {t('missing')}
         </dd>
       </dl>
     </div>
@@ -53,6 +51,9 @@ export const WithTranslateHook = () => {
 
         <dt>Nested string:</dt>
         <dd>{t(lang.nested.text)}</dd>
+
+        <dt>Plural 0:</dt>
+        <dd>{t(lang.pluralize, 0)}</dd>
 
         <dt>Plural 1:</dt>
         <dd>{t(lang.pluralize, 1)}</dd>

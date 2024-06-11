@@ -6,5 +6,13 @@
       "text": "Hallo nochmal!"
     },
     "substitution": "I have come here to chew %{variable_1} and kick %{variable_2}... and I'm all out of %{variable_1}."
+  },
+  "ru-RU": {
+    "text": "Здаров!",
+    "pluralize": "%{smart_count} яблоко |||| %{smart_count} яблока |||| %{smart_count} яблок",
+    "nested": {
+      "text": "Здаров еще раз!"
+    },
+    "substitution": "Я пришел сюда жевать %{variable_1} и пинать %{variable_2}... и у меня закончились %{variable_1}."
   }
 }

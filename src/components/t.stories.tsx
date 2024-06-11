@@ -13,6 +13,9 @@ export const WithTComponent = () => (
       <dt>Nested string:</dt>
       <dd><T dictionary={langFile} phrase="nested.text" /></dd>
 
+      <dt>Plural 0:</dt>
+      <dd><T dictionary={langFile} phrase="pluralize" smartCount={0} /></dd>
+
       <dt>Plural 1:</dt>
       <dd><T dictionary={langFile} phrase="pluralize" smartCount={1} /></dd>
 
@@ -27,11 +30,6 @@ export const WithTComponent = () => (
           variable_1={<strong onClick={() => alert('🍬')}>bubblegum</strong>}
           variable_2={<em onClick={() => alert('🍑')}>ass</em>}
         />
-      </dd>
-
-      <dt>Missing value:</dt>
-      <dd>
-        <T dictionary={langFile} phrase="missing" />
       </dd>
     </dl>
   </div>

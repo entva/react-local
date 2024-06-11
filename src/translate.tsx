@@ -99,7 +99,7 @@ const translate = (
 ): string => {
   if (!activeLocale) throw new Error('Locale argument must always be provided');
   if (!phrase) throw new Error('Phrase argument must always be provided');
-  if (!substitutions) return phrase;
+  if (typeof substitutions === 'undefined') return phrase;
 
   const options = typeof substitutions === 'number' ? { smart_count: substitutions } : substitutions;
   let result = phrase;
@@ -123,7 +123,7 @@ const translate = (
     // Syntax is preserved to avoid false positive replacements when part of the string
     // is matching a substitution variable
     const item = options[shard.slice(2, -1)];
-    if (!item) return shard;
+    if (typeof item === 'undefined') return shard;
 
     const isJSX = isValidElement(item);
     if (!isJSX) return String(item);
