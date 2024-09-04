@@ -5,7 +5,8 @@
     "nested": {
       "text": "Hallo nochmal!"
     },
-    "substitution": "I have come here to chew %{variable_1} and kick %{variable_2}... and I'm all out of %{variable_1}."
+    "substitution": "I have come here to chew %{variable_1} and kick %{variable_2}... and I'm all out of %{variable_1}.",
+    "quoted": "This is a \"%{quote}\" quote."
   },
   "ru-RU": {
     "text": "Здаров!",
@@ -13,6 +14,7 @@
     "nested": {
       "text": "Здаров еще раз!"
     },
-    "substitution": "Я пришел сюда жевать %{variable_1} и пинать %{variable_2}... и у меня закончились %{variable_1}."
+    "substitution": "Я пришел сюда жевать %{variable_1} и пинать %{variable_2}... и у меня закончились %{variable_1}.",
+    "quoted": "Это \"%{quote}\" quote."
   }
 }

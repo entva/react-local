@@ -31,6 +31,9 @@ export const WithTHook = () => {
             variable_2: 'ass',
           })}
         </dd>
+
+        <dt>Quote:</dt>
+        <dd>{t('quoted', { quote: 'I like turtles (c) Albert Einstein' })}</dd>
       </dl>
     </div>
   );
@@ -68,6 +71,9 @@ export const WithTranslateHook = () => {
             variable_2: 'ass',
           })}
         </dd>
+
+        <dt>Quote:</dt>
+        <dd>{t(lang.quoted, { quote: 'I like turtles (c) Albert Einstein' })}</dd>
       </dl>
     </div>
   );

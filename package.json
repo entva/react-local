@@ -6,7 +6,7 @@
   "readmeFilename": "README.md",
   "repository": "entva/react-local",
   "bugs": "https://github.com/entva/react-local/issues",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "keywords": [
     "react",
     "polyglot",
@@ -52,7 +52,7 @@
     "@entva/browserslist-config": "^1.0.0",
     "@ladle/react": "^4.0.2",
     "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/lodash.get": "^4.4.9",

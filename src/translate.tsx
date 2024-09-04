@@ -122,6 +122,8 @@ const translate = (
     // We could use a regex to extract `variableName` but this is 100x faster
     // Syntax is preserved to avoid false positive replacements when part of the string
     // is matching a substitution variable
+    if (shard[0] !== '%' || shard[1] !== '{' || shard[shard.length - 1] !== '}') return shard;
+
     const item = options[shard.slice(2, -1)];
     if (typeof item === 'undefined') return shard;
 

@@ -42,6 +42,15 @@ export const WithDictionaryProvider = () => (
             variable_2={<em onClick={() => alert('🍑')}>ass</em>}
           />
         </dd>
+
+        <dt>Quote:</dt>
+        <dd>
+          <T
+            dictionary={langFile}
+            phrase="quoted"
+            quote="I like turtles (c) Albert Einstein"
+          />
+        </dd>
       </dl>
     </div>
   </WrapInDictionary>
@@ -77,6 +86,9 @@ const WithTHook = () => {
             variable_2: <em onClick={() => alert('🍑')}>ass</em>,
           })}
         </dd>
+
+        <dt>Quote:</dt>
+        <dd>{t('quoted', { quote: 'I like turtles (c) Albert Einstein' })}</dd>
       </dl>
     </div>
   );
