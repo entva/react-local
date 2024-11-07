@@ -6,7 +6,7 @@
   "readmeFilename": "README.md",
   "repository": "entva/react-local",
   "bugs": "https://github.com/entva/react-local/issues",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "keywords": [
     "react",
     "polyglot",
@@ -43,35 +43,35 @@
     "start": "ladle serve"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.5",
-    "@babel/plugin-transform-runtime": "^7.24.0",
-    "@babel/preset-env": "^7.24.5",
-    "@babel/preset-react": "^7.23.3",
-    "@babel/preset-typescript": "^7.23.3",
-    "@babel/register": "^7.23.7",
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-transform-runtime": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@babel/preset-typescript": "^7.26.0",
+    "@babel/register": "^7.25.9",
     "@entva/browserslist-config": "^1.0.0",
-    "@ladle/react": "^4.0.2",
+    "@ladle/react": "^4.1.2",
     "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.6",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.1",
     "@types/lodash.get": "^4.4.9",
-    "eslint": "^8.57.0",
-    "eslint-config-entva-typescript": "^1.0.0",
+    "eslint": "^8.57.1",
+    "eslint-config-entva-typescript": "^1.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "rollup": "^4.18.0",
-    "rollup-plugin-delete": "^2.0.0",
+    "rollup": "^4.24.4",
+    "rollup-plugin-delete": "^2.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-preserve-directives": "^1.1.1",
-    "tslib": "^2.6.2",
-    "typescript": "^5.4.5"
+    "rollup-preserve-directives": "^1.1.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.6.3"
   },
   "peerDependencies": {
-    "react": "^18.0.0"
+    "react": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.24.5",
+    "@babel/runtime": "^7.26.0",
     "lodash.get": "^4.4.2"
   }
 }

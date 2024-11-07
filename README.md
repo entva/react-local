@@ -1,7 +1,7 @@
 @entva/react-local
 =============
 
-A React internationalization library inspired by [node-polyglot](https://airbnb.io/polyglot.js/). Supports RSC and Next.js app folder via an additional `@entva/react-local/server` export.
+A React internationalization library inspired by [node-polyglot](https://airbnb.io/polyglot.js/). Supports RSC and Next.js app folder via an additional `@entva/react-local/server` export. Supports React Native.
 
 ## Dictionaries
 
