@@ -20,12 +20,12 @@ export default [
     input: 'src/server.tsx',
     output: [
       {
-        file: 'lib/server.esm.js',
+        file: 'lib/server.js',
         format: 'es',
         sourcemap: true,
       },
       {
-        file: 'lib/server.js',
+        file: 'lib/server.cjs.js',
         format: 'cjs',
         sourcemap: true,
         exports: 'named', // Disable warning for default imports
@@ -37,12 +37,12 @@ export default [
     input: 'src/index.tsx',
     output: [
       {
-        file: 'lib/index.esm.js',
+        file: 'lib/index.js',
         format: 'es',
         sourcemap: true,
       },
       {
-        file: 'lib/index.js',
+        file: 'lib/index.cjs.js',
         format: 'cjs',
         sourcemap: true,
         exports: 'named', // Disable warning for default imports
