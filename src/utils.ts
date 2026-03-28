@@ -27,7 +27,7 @@ export const getT = <T extends DictionaryValue>(active: string, dictionary: T) =
   const lang = dictionary[active] as T[keyof T];
 
   const fn: TFunction = (key, options) => {
-    const phrase = get(lang, key) as string;
+    const phrase = get<string>(lang, key)!;
     return translate(active, phrase, options);
   };
 
