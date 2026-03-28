@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import T from './t';
 import Dictionary from './dictionary';
 import { useT } from '../hooks';
-import langFile from '../../.ladle/ladle.translations.json';
+import langFile from '../../.storybook/translations.json';
 
 
 export default { title: 'Dictionary' };
