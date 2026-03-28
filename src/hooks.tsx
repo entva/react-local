@@ -1,5 +1,5 @@
 import { useCallback, useContext } from 'react';
-import get from 'lodash.get';
+import { get } from './utils';
 import translate from './translate';
 
 import type { TFunction, DictionaryValue } from './types';

@@ -1,4 +1,4 @@
-import translate from './translate';
+import type translate from './translate';
 
 type Translate = typeof translate;
 type TranslateParameters = Parameters<Translate>;
