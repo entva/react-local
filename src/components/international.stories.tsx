@@ -1,5 +1,5 @@
 import { useLocaleData, useT, useTranslate } from '../hooks';
-import langFile from '../../.ladle/ladle.translations.json';
+import langFile from '../../.storybook/translations.json';
 
 export default { title: 'International' };
 

@@ -1,5 +1,7 @@
+'use client';
+
 import { useCallback, useContext } from 'react';
-import get from 'lodash.get';
+import { get } from './utils';
 import translate from './translate';
 
 import type { TFunction, DictionaryValue } from './types';
@@ -22,7 +24,7 @@ export const useT = <T extends DictionaryValue>(dictionary?: T) => {
   const lang = currentDictionary[active] as T[keyof T];
 
   const fn: TFunction = useCallback((key, options) => {
-    const phrase = get(lang, key) as string;
+    const phrase = get<string>(lang, key)!;
     return translate(active, phrase, options);
   }, [active, lang]);
 

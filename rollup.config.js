@@ -17,7 +17,7 @@ const plugins = [
 export default [
   {
     plugins: [del({ targets: 'lib/*' }), ...plugins],
-    input: 'src/server.tsx',
+    input: 'src/server.ts',
     output: [
       {
         file: 'lib/server.js',
@@ -34,7 +34,7 @@ export default [
   },
   {
     plugins: [preserveDirective(), ...plugins],
-    input: 'src/index.tsx',
+    input: 'src/index.ts',
     output: [
       {
         file: 'lib/index.js',

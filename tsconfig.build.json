@@ -4,11 +4,12 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "explainFiles": false,
+    "outDir": "./lib",
     "declarationDir": "./lib",
     "rootDir": "./src",
     "noEmit": false
   },
   "include": [
-    "./src/index.tsx",
+    "./src/index.ts",
   ],
 }
