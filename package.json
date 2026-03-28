@@ -6,7 +6,7 @@
   "readmeFilename": "README.md",
   "repository": "entva/react-local",
   "bugs": "https://github.com/entva/react-local/issues",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "keywords": [
     "react",
     "polyglot",
@@ -60,6 +60,8 @@
     "@rollup/plugin-typescript": "^12.3.0",
     "@storybook/react": "^10.3.3",
     "@storybook/react-vite": "^10.3.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.4",
     "eslint-config-entva-typescript": "^2.44.0",
     "react": "^19.2.4",
