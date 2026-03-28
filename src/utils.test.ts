@@ -37,9 +37,9 @@ describe('get', () => {
     expect(get(object, 'a[0].b.c')).toBe(3);
   });
 
-  it('gets a nested property via array path', () => {
+  it('gets a nested property via bracket notation', () => {
     const object = { a: [{ b: { c: 3 } }] };
-    expect(get(object, ['a', '0', 'b', 'c'])).toBe(3);
+    expect(get(object, 'a[0].b.c')).toBe(3);
   });
 
   it('returns undefined for missing path', () => {
@@ -90,8 +90,8 @@ describe('get', () => {
     expect(get({ a: { b: { c: { d: 4 } } } }, 'a.b.c.d')).toBe(4);
   });
 
-  it('handles array path with missing intermediate node', () => {
-    expect(get({ a: 1 }, ['a', 'b', 'c'])).toBeUndefined();
+  it('handles path with missing intermediate node', () => {
+    expect(get({ a: 1 }, 'a.b.c')).toBeUndefined();
   });
 });
 

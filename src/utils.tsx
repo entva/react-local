@@ -9,12 +9,15 @@ export const parsePath = (path: string): string[] => path
   .split('.')
   .filter(Boolean);
 
-export const get = (object: unknown, path: string | string[], defaultValue?: unknown): unknown => {
+export const get = (
+  object: Record<string, unknown> | null | undefined,
+  path: string,
+  defaultValue?: unknown,
+): unknown => {
   if (object == null) return defaultValue;
-  const keys = Array.isArray(path) ? path : parsePath(path);
   let current: unknown = object;
-  for (const key of keys) {
-    if (current == null) return defaultValue;
+  for (const key of parsePath(path)) {
+    if (current == null || typeof current !== 'object') return defaultValue;
     current = (current as Record<string, unknown>)[key];
   }
   return current === undefined ? defaultValue : current;

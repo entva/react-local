@@ -39,7 +39,7 @@
   "scripts": {
     "reinstall": "rm -rf node_modules package-lock.json && npm install",
     "lint": "eslint ./",
-    "build": "rollup --config rollup.config.js --bundleConfigAsCjs",
+    "build": "rollup --config rollup.config.js",
     "check": "npm run lint && npm run typecheck && npm run test",
     "prepublishOnly": "npm run check && npm run build && echo \"\\033[0;32mReady to publish\\033[0m\"",
     "start": "ladle serve",
