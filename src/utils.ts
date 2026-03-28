@@ -9,18 +9,18 @@ export const parsePath = (path: string): string[] => path
   .split('.')
   .filter(Boolean);
 
-export const get = (
+export const get = <T = unknown>(
   object: Record<string, unknown> | null | undefined,
   path: string,
-  defaultValue?: unknown,
-): unknown => {
+  defaultValue?: T,
+): T | undefined => {
   if (object == null) return defaultValue;
   let current: unknown = object;
   for (const key of parsePath(path)) {
     if (current == null || typeof current !== 'object') return defaultValue;
     current = (current as Record<string, unknown>)[key];
   }
-  return current === undefined ? defaultValue : current;
+  return current === undefined ? defaultValue : current as T;
 };
 
 export const getT = <T extends DictionaryValue>(active: string, dictionary: T) => {

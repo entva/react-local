@@ -3,13 +3,13 @@
 import { useMemo, type ReactNode } from 'react';
 import { LocaleProvider } from '../context';
 
-type Props<T = unknown> = {
+type Props = {
   active: string,
   children: ReactNode,
-  data?: T,
+  data?: unknown,
 };
 
-const International = <T = unknown>({ active, data, children }: Props<T>) => {
+const International = ({ active, data, children }: Props) => {
   const context = useMemo(() => ({ active, data }), [active, data]);
   return <LocaleProvider value={context}>{children}</LocaleProvider>;
 };

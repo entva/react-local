@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useContext } from 'react';
 import { get } from './utils';
 import translate from './translate';
