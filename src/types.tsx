@@ -8,8 +8,6 @@ export type TFunction = (
   substitutions?: TranslateParameters[2],
 ) => ReturnType<Translate>;
 
-export type SerializableValue = string | string[] | { [key: string]: SerializableValue };
-
 export type LocaleValue<T = unknown> = {
   active: string,
   data?: T,
